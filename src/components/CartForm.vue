@@ -1,23 +1,23 @@
 <template>
-<h2>Добавление товара</h2>
+
 <form @submit.prevent>
-        <p>Наименование товара</p>
+        <p class="input_title">Наименование товара</p>
         <my-input
-         v-model="cart.title"
+         v-model.trim="cart.title"
           type="text"
           placeholder="Введите наименование товара"
         
         />
-        <p>Описание товара</p>
-        <my-input
-           v-model="cart.body"
+        <p  class="input_title">Описание товара</p>
+        <my-input style="height: 108px"
+           v-model.trim="cart.body"
           type="text"
           placeholder="Введите описание товара"
         />
-              <p>Цена товара</p>
+              <p class="input_title">Цена товара</p>
         <my-input
          type="number"
-            v-model="cart.price"
+            v-model.trim="cart.price"
           placeholder="Введите цену" />
 			 <div>
   <add-button  @click="createProduct">Добавить товар</add-button>
@@ -64,7 +64,16 @@ font-style: normal;
 font-weight: 600;
 font-size: 28px;
 line-height: 35px;
-
 color: #3F3F3F;
+}
+input_title{
+	font-family: 'Source Sans Pro';
+font-style: normal;
+font-weight: 400;
+font-size: 10px;
+line-height: 13px;
+letter-spacing: -0.02em;
+color: #49485E;
+margin-bottom: 4px;
 }
 </style>

@@ -3,7 +3,7 @@
 	<div>
       <div>{{ cart.title }}</div>
       <div>{{ cart.body }}</div>
-      <div>{{ cart.price }}</div>
+      <div>{{ cart.price }} руб.</div>
 	</div>
    <div class="delete_item">
      <my-button @click="$emit('remove', cart)">
