@@ -1,11 +1,11 @@
 <template>
 <div >
 	<div>
-		<!-- <img src="cart.url"/> -->
+		<img :src="cart.url" width="332" height="200"/>
       <div class="cart_title">{{ cart.title }}</div>
       <div class="cart_desk">{{ cart.body }}</div>
       <div>{{ cart.price }} руб.</div>
-		<div>{{ cart.url }} руб.</div>
+	
 	</div>
    <div class="delete_item">
      <my-button @click="$emit('remove', cart)">
