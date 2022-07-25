@@ -1,42 +1,30 @@
 <template>
-<div>
-    <div>
-      <form @submit.prevent>
-        <p>Наименование товара</p>
-        <input
-          v-bind:value="title"
-          type="text"
-          placeholder="Введите наименование товара"
-          @input="title = $event.target.value"
-        />
-        <p>Описание товара</p>
-        <input
-          v-bind:value="body"
-          @input="body = $event.target.value"
-          type="text"
-          placeholder="Введите описание товара"
-        />
-        <p>Ссылка на изображение товара</p>
-        <input type="text" 
-        placeholder="Введите ссылку" />
-        <p>Цена товара</p>
-        <input v-bind:value="price"
-         type="number"
-          @input="price = $event.target.value"
-          placeholder="Введите цену" />
-        <button @click="createProduct">Добавить товар</button>
-      </form>
-    </div>
-    <div class="cart" v-for="cart in carts">
-      <div>{{ cart.title }}</div>
-      <div>{{ cart.body }}</div>
-      <div>{{ cart.price }}</div>
-    </div>
+
+<div  class="container">
+  <h2>Добавление товара</h2>
+  <div class="grid">
+<div class="cart_form">
+<cart-form @create="createProduct"/>
+</div>
+ <div class="cart_list">
+ <cart-list v-bind:carts="carts"
+ @remove="removeProduct" />
+ </div>
+
   </div>
+
+  </div>
+ 
 </template>
 
 <script>
+import CartForm from './components/CartForm';
+import CartList from './components/CartList';
+
   export default {
+    components:{
+CartForm, CartList
+    },
     data(){
       return{
             carts: [
@@ -47,21 +35,15 @@
           price: 10000
         }
       ],
-       title: "",
-      body: "",
-      price: ""
+    
       }
     },
     methods:{
-      createProduct(event){
-        const newProduct = {
-          id: Date.now(),
-          title: this.title,
-          body: this.body,
-          price: this.price
-        };
-        this.carts.push(newProduct);
-        (this.title = ""), (this.body = ""), (this.price = "");
+      createProduct(cart){
+       this.carts.push(cart)
+      },
+      removeProduct(cart){
+this.carts=this.carts.filter(product=>product.id!==cart.id)
       }
     }
   }
@@ -72,5 +54,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background: #FFFEFB;
 }
+.container{
+max-width: 1440px;
+min-height: 900px;
+padding: 32px;
+
+}
+.grid{
+display: grid;
+grid-template-columns: 1fr 3fr;
+margin-top: 16px;
+}
+.cart_form{
+  background: #FFFEFB;
+box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04), 0px 6px 10px rgba(0, 0, 0, 0.02);
+border-radius: 4px;
+}
+
 </style>
