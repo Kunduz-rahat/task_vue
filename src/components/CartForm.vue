@@ -14,6 +14,14 @@
           type="text"
           placeholder="Введите описание товара"
         />
+		    <p  class="input_title">Ссылка на изображение товара</p>
+		  <my-input
+         v-model.trim="cart.url"
+          type="url"
+          placeholder="Введите ссылку"
+        
+        />
+      
               <p class="input_title">Цена товара</p>
         <my-input
          type="number"
@@ -39,7 +47,8 @@ import MyInput from './UI/MyInput'
 				cart:{
 					title:"",
 					body:"",
-					price:""
+					price:"",
+					url:""
 				}
 			}
 		},
