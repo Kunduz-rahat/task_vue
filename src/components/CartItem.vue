@@ -1,11 +1,11 @@
 <template>
 <div >
-	<div>
-		<!-- <img src="cart.url"/> -->
+	<div cart_item>
+		<img :src="cart.url"  height="200"/>
       <div class="cart_title">{{ cart.title }}</div>
-      <div class="cart_desk">{{ cart.body }}</div>
-      <div>{{ cart.price }} руб.</div>
-		<div>{{ cart.url }} руб.</div>
+      <p class="cart_desk">{{ cart.body }}</p>
+      <div class="cart_price">{{ cart.price }} руб.</div>
+	
 	</div>
    <div class="delete_item">
      <my-button @click="$emit('remove', cart)">
@@ -33,6 +33,7 @@ font-style: normal;
 font-weight: 600;
 font-size: 20px;
 line-height: 25px;
+margin: 16px 0;
 
 color: #3F3F3F;
 }
@@ -44,5 +45,19 @@ font-size: 16px;
 line-height: 20px;
 
 color: #3F3F3F;
+}
+.cart_price{
+	margin-top: 32px;
+	font-family: 'Source Sans Pro';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 30px;
+color: #3F3F3F;
+}
+.cart_item{
+	background: #FFFEFB;
+box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04), 0px 6px 10px rgba(0, 0, 0, 0.02);
+border-radius: 4px;
 }
 </style>

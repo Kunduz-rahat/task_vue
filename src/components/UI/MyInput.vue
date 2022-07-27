@@ -20,7 +20,7 @@ this.$emit('update:modelValue', event.target.value)
 
 <style scoped>
 .input{
-	width: 284px;
+	width: 274px;
 height: 36px;
 background: #FFFEFB;
 box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);

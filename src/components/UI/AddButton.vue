@@ -12,7 +12,7 @@
 
 <style scoped>
 .add_btn{
-width: 284px;
+width: 274px;
 height: 36px;
 background: #EEEEEE;
 border-radius: 10px;
