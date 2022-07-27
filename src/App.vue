@@ -120,11 +120,11 @@ padding: 24px;
 .aside{
   height: 80vh;
   position: sticky;
-  width: 25%;
+  width: 344px;
   margin: 0 auto;
 }
 .right-side{
-  width: 75%; 
+  width: 1032px; 
  
 }
 .btn_header{
