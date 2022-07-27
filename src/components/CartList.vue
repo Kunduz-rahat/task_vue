@@ -30,7 +30,7 @@ import CartItem from '@/components/CartItem';
 .cart_list{
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	
+	grid-column: 16px;
 }
 
 </style>

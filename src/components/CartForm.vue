@@ -75,7 +75,7 @@ font-size: 28px;
 line-height: 35px;
 color: #3F3F3F;
 }
-input_title{
+.input_title{
 	font-family: 'Source Sans Pro';
 font-style: normal;
 font-weight: 400;
