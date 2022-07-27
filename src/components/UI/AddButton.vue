@@ -25,4 +25,7 @@ border: none;
 font-family: 'Inter';
 margin-top: 24px;
 }
+.add_btn:hover{
+	background: #7BAE73;
+}
 </style>
