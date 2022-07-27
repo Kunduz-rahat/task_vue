@@ -1,6 +1,6 @@
 <template>
 
-<form @submit.prevent>
+<form class="form" @submit.prevent>
         <p class="input_title">Наименование товара</p>
         <my-input
          v-model.trim="cart.title"
@@ -84,5 +84,9 @@ line-height: 13px;
 letter-spacing: -0.02em;
 color: #49485E;
 margin-bottom: 4px;
+margin-top: 16px;
+}
+.form{
+	margin: 0 auto;
 }
 </style>

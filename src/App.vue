@@ -1,20 +1,27 @@
 <template>
 
-<div  class="container">
+  <div  class="container">
+    <div class="header">
   <h2>Добавление товара</h2>
-  <div class="grid">
+    <button class="btn_header" >По умолчанию</button>
+    </div>
+  
+    <div class="flex">
+<div class="aside">
+ 
 <div class="cart_form">
 <cart-form @create="createProduct"/>
 </div>
- <div class="cart_list">
+</div>
+ 
+ <div class="right-side">
  <cart-list v-bind:carts="carts"
  @remove="removeProduct" />
  </div>
+    </div>
 
   </div>
 
-  </div>
- 
 </template>
 
 <script>
@@ -61,17 +68,42 @@ this.carts=this.carts.filter(product=>product.id!==cart.id)
 max-width: 1440px;
 min-height: 900px;
 padding: 32px;
+background-color:rgba(255, 254, 251, 0.8);;
+
 
 }
-.grid{
-display: grid;
-grid-template-columns: 1fr 3fr;
-margin-top: 16px;
+.flex{
+display: flex;
 }
 .cart_form{
   background: #FFFEFB;
 box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04), 0px 6px 10px rgba(0, 0, 0, 0.02);
 border-radius: 4px;
+margin: 0 auto;
+padding: 24px;
 }
-
+.aside{
+  height: 80vh;
+  position: sticky;
+  width: 25%;
+  margin: 0 auto;
+}
+.right-side{
+  width: 75%; 
+  margin-left: 16px;
+}
+.btn_header{
+  width: 121.49px;
+height: 36px;
+background: #FFFEFB;
+box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+border-radius: 4px;
+border: none;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
 </style>
